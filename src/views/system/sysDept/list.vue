@@ -25,7 +25,7 @@
         <template slot-scope="scope">
           <el-button type="success" icon="el-icon-plus" size="mini" @click="add(scope.row)" title="添加下级部门" :disabled="$hasBP('bnt.sysDept.add')  === false"/>
           <el-button type="primary" icon="el-icon-edit" size="mini" @click="edit(scope.row)" title="修改" :disabled="$hasBP('bnt.sysDept.update')  === false"/>
-          <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeDataById(scope.row.id)" title="删除" :disabled="scope.row.children || $hasBP('bnt.sysDept.remove')  === false"/>
+          <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeDataById(scope.row.id)" title="删除" :disabled="scope.row.children.length || $hasBP('bnt.sysDept.remove')  === false"/>
         </template>
       </el-table-column>
     </el-table>
